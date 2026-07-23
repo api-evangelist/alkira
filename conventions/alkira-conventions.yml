@@ -1,0 +1,44 @@
+generated: '2026-07-17'
+method: searched
+source: https://github.com/alkiranet/client-go
+# Cross-cutting request/response semantics captured verbatim from Alkira's official
+# Go client (github.com/alkiranet/client-go, vendored in alkiranet/mcp-alkira).
+base_url: https://<tenant>.portal.alkira.com/api
+media_type: application/json
+authentication:
+  style: apiKey
+  header: 'Authorization: api-key <base64(API_KEY)>'
+  ref: authentication/alkira-authentication.yml
+tenant_scoping:
+  note: Most resources are nested under a tenant network id.
+  resolve: GET /api/tenantnetworksummaries
+  resource_path: /api/tenantnetworks/{tenantNetworkId}/{resource}
+pagination:
+  style: offset-limit
+  request_params: [offset, limit]
+  response_envelope:
+    data: array of resources
+    pagination: {paginated: bool, Offset: int, limit: int, hits: int}
+  note: Most list endpoints follow this envelope; some resources return bare arrays.
+request_tracing:
+  header: x-ak-request-id
+  format: uuid
+  note: Client sets a fresh UUID per request for correlation.
+rate_limiting:
+  signal: HTTP 429
+  retry_after_header: Retry-After
+  client_behavior: 'Official client retries up to 5x on 429/500 and honors Retry-After (seconds).'
+  ref: null
+idempotency:
+  supported: false
+  note: No idempotency-key header is documented; x-ak-request-id is a correlation id, not an idempotency key.
+versioning:
+  api: unversioned path (/api/...)
+  tooling: Terraform provider follows semver (current v1.5.1)
+error_handling:
+  note: Errors surfaced as non-2xx HTTP status with a JSON body; no RFC 9457 problem+json observed.
+  ref: null
+cross_links:
+  authentication: authentication/alkira-authentication.yml
+  lifecycle: lifecycle/alkira-lifecycle.yml
+  data_model: data-model/alkira-data-model.yml

@@ -1,8 +1,27 @@
 aid: alkira
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/alkira.png
 name: Alkira
-description: 'Alkira is a company surfaced as a portfolio company of gv, kleiner-perkins and added to
-  the API Evangelist network as a stub for enrichment. Sector: enterprise. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Alkira delivers Network Infrastructure as a Service (NaaS) through its
+  Cloud Services Exchange, letting enterprises build, deploy, and manage a global
+  multi-cloud network from a unified portal without provisioning physical hardware.
+  The platform connects clouds, sites, remote users, and SaaS through Cloud Exchange
+  Points (CXPs) with built-in segmentation, routing, integrated firewall/security
+  services (Palo Alto, Fortinet, Check Point, Cisco, Zscaler, Infoblox, F5), and full-stack
+  visibility. Everything provisioned in the portal is driven by the Alkira Portal REST
+  API and exposed as infrastructure-as-code via an official Terraform provider, a Go
+  client library, and a published Model Context Protocol (MCP) server for AI agents.'
 url: https://raw.githubusercontent.com/api-evangelist/alkira/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -17,7 +36,32 @@ modified: '2026-07-17'
 tags:
 - Company
 - Enterprise
-apis: []
+- Networking
+- Cloud
+- Multi-Cloud
+- Infrastructure
+- Network as a Service
+- SD-WAN
+- Security
+- Automation
+apis:
+- name: Alkira Portal API
+  description: 'REST API behind the Alkira Portal (Cloud Services Exchange). Manages
+    tenant networks, segments, cloud and site connectors (AWS, Azure, GCP, OCI, and
+    SD-WAN vendors), integrated network services, routing/traffic/NAT policies, BGP
+    lists, groups, and health/monitoring. Authenticated with a per-user API key; most
+    resources hang off a tenant network id resolved at session start.'
+  humanURL: https://registry.terraform.io/providers/alkiranet/alkira/latest/docs
+  baseURL: https://your_tenant_name.portal.alkira.com/api
+  properties:
+  - type: Authentication
+    url: authentication/alkira-authentication.yml
+  - type: Conventions
+    url: conventions/alkira-conventions.yml
+  - type: DataModel
+    url: data-model/alkira-data-model.yml
+  - type: Conformance
+    url: conformance/alkira-conformance.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -26,3 +70,38 @@ maintainers:
 common:
 - type: Website
   url: https://www.alkira.com
+- type: GitHubOrganization
+  url: https://github.com/alkiranet
+- type: StatusPage
+  url: https://status.alkira.com
+- type: MCPServer
+  url: mcp/alkira-mcp.yml
+- type: Packages
+  url: packages/alkira-packages.yml
+- type: SDKs
+  url: packages/alkira-packages.yml
+- type: Authentication
+  url: authentication/alkira-authentication.yml
+- type: Conventions
+  url: conventions/alkira-conventions.yml
+- type: DataModel
+  url: data-model/alkira-data-model.yml
+- type: Lifecycle
+  url: lifecycle/alkira-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/alkira-lifecycle.yml
+- type: Conformance
+  url: conformance/alkira-conformance.yml
+- type: ChangeLog
+  url: changelog/alkira-changelog.yml
+- type: DomainSecurity
+  url: security/alkira-domain-security.yml
+- type: LLMsTxt
+  url: llms/alkira-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

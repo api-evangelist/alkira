@@ -1,0 +1,78 @@
+generated: '2026-07-17'
+method: derived
+source: https://github.com/alkiranet/client-go
+# Entity graph derived from the resource set exposed by the official Go client
+# (github.com/alkiranet/client-go) and the Portal API paths it calls. The tenant
+# network is the root aggregate; nearly every resource belongs to it.
+root: TenantNetwork
+entities:
+- name: TenantNetwork
+  path: /api/tenantnetworks/{id}
+  summary: Root aggregate; all network resources are provisioned under a tenant network id.
+- name: Segment
+  path: /api/tenantnetworks/{id}/segments
+- name: Group
+  path: /api/tenantnetworks/{id}/groups
+- name: CXP
+  summary: Cloud Exchange Point (points of presence where connectors/services land).
+- name: Connector
+  summary: Cloud & site connectors — one resource per cloud/SD-WAN type.
+  variants: [aws-vpc, aws-tgw, aws-direct-connect, azure-vnet, azure-express-route,
+    gcp-vpc, gcp-interconnect, oci-vcn, internet, ipsec, ipsec-adv, aruba-edge,
+    cisco-sdwan, fortinet-sdwan, versa-sdwan, vmware-sdwan, juniper-sdwan,
+    akamai-prolexic, remote-access]
+- name: Service
+  summary: Integrated network/security services inserted into the fabric.
+  variants: [pan (palo-alto), fortinet, checkpoint, cisco-ftdv, zscaler, infoblox, f5-lb]
+- name: Policy
+  variants: [traffic-policy, traffic-rule, traffic-rule-list, nat-policy, nat-rule, route-policy]
+- name: BgpList
+  variants: [prefix, as-path, community, extended-community, global-cidr, dns-server,
+    policy-fqdn, udr]
+- name: InternetApplication
+- name: BillingTag
+- name: Byoip
+- name: IpReservation
+- name: SegmentResource
+- name: SegmentResourceShare
+relationships:
+- from: Segment
+  to: TenantNetwork
+  kind: belongs_to
+  via: tenantNetworkId
+- from: Connector
+  to: TenantNetwork
+  kind: belongs_to
+  via: tenantNetworkId
+- from: Connector
+  to: Segment
+  kind: belongs_to
+  via: segmentId
+- from: Connector
+  to: Group
+  kind: belongs_to
+  via: group
+- from: Connector
+  to: CXP
+  kind: belongs_to
+  via: cxp
+- from: Service
+  to: TenantNetwork
+  kind: belongs_to
+  via: tenantNetworkId
+- from: Service
+  to: Segment
+  kind: has_many
+  via: segmentIds
+- from: Policy
+  to: TenantNetwork
+  kind: belongs_to
+  via: tenantNetworkId
+- from: Policy
+  to: BgpList
+  kind: has_many
+  via: prefixListIds
+- from: SegmentResourceShare
+  to: SegmentResource
+  kind: has_many
+  via: resourceIds

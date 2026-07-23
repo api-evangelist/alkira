@@ -1,0 +1,30 @@
+generated: '2026-07-17'
+method: derived
+source: https://github.com/alkiranet/client-go
+# Cross-cutting standards asserted from the observed API behavior (client-go) and
+# the Terraform provider docs. No published compliance-certification program was
+# located on the (bot-protected) marketing site, so no `Compliance` pointer is emitted.
+standards:
+- id: rest-json
+  conforms: true
+  evidence: JSON over HTTPS, resource-oriented /api/tenantnetworks/{id}/{resource} paths.
+- id: oauth2
+  conforms: false
+  evidence: Auth is a base64 API key in the Authorization header; no OAuth2 flows.
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors are non-2xx HTTP with JSON bodies; no application/problem+json observed.
+- id: pagination
+  conforms: true
+  evidence: offset/limit request params with a {data, pagination:{Offset,limit,hits}} envelope.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key header documented.
+- id: rate-limiting
+  conforms: true
+  evidence: HTTP 429 with Retry-After honored by the official client.
+- id: request-id-correlation
+  conforms: true
+  evidence: x-ak-request-id (UUID) sent per request.

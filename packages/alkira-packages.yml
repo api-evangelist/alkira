@@ -1,0 +1,28 @@
+generated: '2026-07-17'
+method: searched
+source: https://github.com/alkiranet
+# First-party Alkira client tooling. The Terraform provider is the primary
+# infrastructure-as-code surface; client-go is the Go SDK the provider and the
+# MCP server are both built on.
+packages:
+- language: hcl
+  registry: terraform-registry
+  name: alkiranet/alkira
+  url: https://registry.terraform.io/providers/alkiranet/alkira/latest
+  source: https://github.com/alkiranet/terraform-provider-alkira
+  install: 'terraform { required_providers { alkira = { source = "alkiranet/alkira" } } }'
+  version: 1.5.1
+  downloads: 461214
+  official: true
+  description: Official Terraform provider for lifecycle management of the Alkira Cloud
+    Services Exchange (connectors, segments, services, policies, tenant networks).
+- language: go
+  registry: github
+  name: github.com/alkiranet/client-go
+  url: https://github.com/alkiranet/client-go
+  install: go get github.com/alkiranet/client-go
+  version: 0.5.4
+  official: true
+  description: Official Alkira Go client library for the Portal REST API (the SDK
+    the Terraform provider and MCP server are built on). Distributed as a Go module;
+    seen vendored at github.com/alkiranet/client-go in alkiranet/mcp-alkira.

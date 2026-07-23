@@ -1,0 +1,23 @@
+generated: '2026-07-17'
+method: generated
+source: https://github.com/alkiranet/mcp-alkira
+note: Skills are grounded in the real tool names published by the official Alkira
+  MCP server (alkiranet/mcp-alkira). No OpenAPI is published; the MCP tool surface
+  is the grounding contract. All tools are read-only (get_all / get_by_id / get_by_name / get_total).
+skills:
+- file: alkira-multicloud-connector-inventory.md
+  name: Inventory multi-cloud connectors
+  api: mcp/alkira-mcp.yml
+  operations: [connector_aws_vpc_get_all, connector_aws_tgw_get_all, connector_azure_vnet_get_all,
+    connector_gcp_vpc_get_all, connector_oci_vcn_get_all, connector_internet_get_all,
+    cxp_get_all]
+- file: alkira-network-health-check.md
+  name: Check tenant network health
+  api: mcp/alkira-mcp.yml
+  operations: [tenant_network_summary, health_connector_get_by_id, health_service_get_by_id,
+    route_get_summary, notification_alerts]
+- file: alkira-segmentation-policy-audit.md
+  name: Audit segmentation and traffic policy
+  api: mcp/alkira-mcp.yml
+  operations: [segment_get_all, segment_resource_get_all, policy_traffic_get_all,
+    policy_nat_get_all, list_prefix_get_by_name]

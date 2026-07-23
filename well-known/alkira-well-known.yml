@@ -1,0 +1,17 @@
+generated: '2026-07-17'
+method: searched
+host: https://www.alkira.com
+note: No /.well-known/ discovery documents were served (all 404). Recorded as
+  a negative result; no WellKnown/SecurityTxt pointer is wired. The Portal API is
+  tenant-scoped (<tenant>.portal.alkira.com) and not probed here.
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404

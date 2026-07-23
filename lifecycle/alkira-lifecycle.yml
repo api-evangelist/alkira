@@ -1,0 +1,25 @@
+generated: '2026-07-17'
+method: searched
+source: https://status.alkira.com
+versioning:
+  api:
+    scheme: unversioned-path
+    note: Portal REST API is served under /api with no version segment.
+  tooling:
+    scheme: semver
+    provider: alkiranet/alkira
+    current: v1.5.1
+    docs: https://registry.terraform.io/providers/alkiranet/alkira
+deprecation:
+  policy: documented
+  examples:
+  - item: Username/password authentication (ALKIRA_USERNAME / ALKIRA_PASSWORD)
+    status: deprecated
+    note: Deprecated in favor of API key auth; slated for removal in a future major release.
+    source: https://registry.terraform.io/providers/alkiranet/alkira/latest/docs
+status_page: https://status.alkira.com
+status_page_provider: Atlassian Statuspage
+sla:
+  url: null
+  note: No public SLA/uptime target document located (marketing site is bot-protected).
+deprecated_operations: []

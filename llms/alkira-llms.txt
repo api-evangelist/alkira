@@ -1,0 +1,31 @@
+# Alkira
+
+> Alkira delivers Network Infrastructure as a Service (NaaS) through its Cloud Services Exchange — a way to build, deploy, and operate a global multi-cloud network from a single portal without physical hardware. Clouds, sites, remote users, and SaaS connect through Cloud Exchange Points (CXPs) with built-in segmentation, routing, and integrated firewall/security services. Everything provisioned in the portal is driven by the Alkira Portal REST API, an official Terraform provider, a Go client library, and a published MCP server.
+
+## APIs
+
+- [Alkira Portal API](https://registry.terraform.io/providers/alkiranet/alkira/latest/docs): REST API behind the portal — tenant networks, segments, cloud/site connectors (AWS, Azure, GCP, OCI, SD-WAN), integrated services, routing/traffic/NAT policies, BGP lists, groups, and health. Base URL: https://<tenant>.portal.alkira.com/api. Auth: `Authorization: api-key <base64(API_KEY)>`.
+
+## Tooling
+
+- [Terraform provider (alkiranet/alkira)](https://registry.terraform.io/providers/alkiranet/alkira/latest): Official IaC provider for the Cloud Services Exchange (current v1.5.1).
+- [client-go](https://github.com/alkiranet/client-go): Official Alkira Go client library for the Portal API.
+- [mcp-alkira](https://github.com/alkiranet/mcp-alkira): Official Model Context Protocol server exposing 193 read-only inventory/health tools over a tenant portal + API key.
+
+## Artifacts (API Evangelist)
+
+- [Authentication](authentication/alkira-authentication.yml)
+- [Conventions](conventions/alkira-conventions.yml)
+- [Data model](data-model/alkira-data-model.yml)
+- [MCP server](mcp/alkira-mcp.yml)
+- [Packages / SDKs](packages/alkira-packages.yml)
+- [Lifecycle](lifecycle/alkira-lifecycle.yml)
+- [Conformance](conformance/alkira-conformance.yml)
+- [Agent Skills](skills/_index.yml)
+
+## Docs
+
+- [Terraform provider docs](https://registry.terraform.io/providers/alkiranet/alkira/latest/docs)
+- [GitHub org](https://github.com/alkiranet)
+- [Status page](https://status.alkira.com)
+- [Website](https://www.alkira.com)
