@@ -1,4 +1,3 @@
-# Official Alkira MCP Server — tool surface captured verbatim from the published repo.
 generated: '2026-07-17'
 method: searched
 source: https://github.com/alkiranet/mcp-alkira
@@ -407,3 +406,9 @@ tools:
   family: tenant
 - name: tenant_resource_usages
   family: tenant
+deployment:
+  mode: local-stdio
+  verified: searched
+  tools: 193
+  checked: '2026-08-12'
+  source: catalog MCP census
