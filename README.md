@@ -64,6 +64,93 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Alkira is a company surfaced as a portfolio company of gv, kleiner-perkins and added to the API Evangelist network as a stub for enrichment. Sector: enterprise. This profile is a lead awaiting the enrichment pipeline.
+Alkira delivers Network Infrastructure as a Service (NaaS) through its Cloud Services Exchange, letting enterprises build, deploy, and manage a global multi-cloud network from a unified portal without provisioning physical hardware. The platform connects clouds, sites, remote users, and SaaS through Cloud Exchange Points (CXPs) with built-in segmentation, routing, integrated firewall/security services (Palo Alto, Fortinet, Check Point, Cisco, Zscaler, Infoblox, F5), and full-stack visibility. Everything provisioned in the portal is driven by the Alkira Portal REST API and exposed as infrastructure-as-code via an official Terraform provider, a Go client library, and a published Model Context Protocol (MCP) server for AI agents.
 
-Backed by: gv, kleiner-perkins — https://www.alkira.com
+**Areas:** Company · Enterprise · Networking · Cloud · Multi-Cloud · Infrastructure · Network as a Service · SD-WAN · Security · Automation
+
+## Alkira on APIs.io
+
+Everything profiled for Alkira is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/alkira/](https://apis.io/providers/alkira/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Alkira Portal API](https://apis.io/apis/alkira/alkira-portal-api/) — REST API behind the Alkira Portal (Cloud Services Exchange). Manages tenant networks, segments, cloud and site connectors (AWS, Azure, GCP, OCI, and SD-WAN…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [Alkira MCP Server](https://apis.io/servers/alkira/mcp-alkira/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Alkira Authentication](https://apis.io/security/alkira/alkira-authentication/)
+- [Alkira Domain Security](https://apis.io/security/alkira/alkira-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.alkira.com)
+- [Blog](https://www.alkira.com/news/)
+- [GitHub](https://github.com/alkiranet)
+- [Status](https://status.alkira.com)
+
+## API Evangelist rating
+
+**Kin Score 18.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.7 |
+| Contract quality | 0.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 42.1 |
+| Developer ergonomics | 23.2 |
+| Access clarity | 0.0 |
+
+**Agent readiness 6.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/alkira/](https://apis.io/providers/alkira/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Alkira: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/alkira/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
